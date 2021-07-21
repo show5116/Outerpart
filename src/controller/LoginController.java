@@ -19,9 +19,9 @@ public class LoginController {
 				case 2:	view = loginservice.signUp(); break;
 				case 3: view = loginservice.idFound(); break;
 				case 4: view = loginservice.temporary(); break;
-				case 5: System.exit(0);
+				case 5: loginservice.exit(); 
 				default:
-					System.out.println("다시 입력해주세요.");
+					System.out.println("\n [ 잘못 입력하였습니다 ]\n");
 					view = 0;
 					break;
 			}	
