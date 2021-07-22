@@ -43,7 +43,7 @@ public class CarRegister {
 	}
 	
 	public void carDelete() {
-		System.out.print("\n ✔ 삭제할 차 번호 › ");
+		System.out.print("\n ✔ 차 번호 › ");
 		String carNumber = scanner.next(); 
 		if (carDao.deleteCar(new CarVO(carNumber)) == 1) {
 			System.out.println("\n ◈◈ 삭제되었습니다 ◈◈\n");

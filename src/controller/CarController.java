@@ -19,7 +19,7 @@ public class CarController {
 	public void carInformation() {
 		while (true) {
 			System.out.println("\n\n 1.렌트카 등록 | 2.렌트카 삭제 | 3.목록 조회 | 4.뒤로 가기\n");
-			System.err.print(" ✔ 번호를 입력해 주세요 › ");
+			System.out.print(" ✔ 번호를 입력해 주세요 › ");
 			int input = scanner.nextInt();
 			switch (input) {
 				case 1: carRegister.carInsert(); break;

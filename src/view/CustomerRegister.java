@@ -102,6 +102,7 @@ public class CustomerRegister {
 		case 3: System.out.println("\n [ 입력된 정보가 없습니다 ]\n"); return;
 		default: System.out.println("\n ※※ 에러 ※※\n"); return;
 		}
+
 		 if(PackDAO.getInstance().insertPack(new PackVO(tourNumber,roomNumber,carNumber,startDate,endDate,maxPeople))==1) {
 	         int packNumber = PackDAO.getInstance().getPackNumber();
 	         int carPrice = CarDAO.getInstance().selectCarPrice(carNumber);
@@ -110,7 +111,6 @@ public class CustomerRegister {
 	         int price = Datecalculate.getinstance().dateDifference(startDate+"",endDate+"")*(int)((carPrice+roomPrice+tourPrice*maxPeople)*saleRate);
 	         
 	         PaymentDAO.getInstance().insertPayment(LoginService.loginId.getUserId(), packNumber,price);
-
 			System.out.println("\n ◈◈ 정상등록 되었습니다 ◈◈ \n");
 		}else {
 			System.out.println("\n [ 등록에 실패하였습니다 ]\n");

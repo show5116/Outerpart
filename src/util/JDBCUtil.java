@@ -31,7 +31,6 @@ public class JDBCUtil {
 			Class.forName("oracle.jdbc.driver.OracleDriver");        
 			conn = DriverManager.getConnection(url, user, pw);          
 		} catch (Exception e) {
-			e.printStackTrace();
 		}
 		return conn;     
 	}
@@ -42,7 +41,6 @@ public class JDBCUtil {
 			if ( pstm != null )pstm.close();  
 			if ( conn != null )conn.close(); 			
 		}catch(Exception e) {
-			e.printStackTrace();
 		}
 	}
 		
@@ -51,7 +49,6 @@ public class JDBCUtil {
 			if ( pstm != null )pstm.close();  
 			if ( conn != null )conn.close(); 			
 		}catch(Exception e) {
-			e.printStackTrace();
 		}
 	}
 	
@@ -62,8 +59,7 @@ public class JDBCUtil {
 			int excute = pstm.executeUpdate();
 			this.DBclose(conn, pstm);
 			return excute;
-		}catch(Exception e) {
-			e.printStackTrace();
+		}catch(Exception e) {;
 			return 0;
 		}
 	}
@@ -77,7 +73,6 @@ public class JDBCUtil {
 			DBclose(conn, pstm, rs);
 			return flag;
 		}catch(Exception e) {
-			e.printStackTrace();
 			return false;
 		}
 	}
